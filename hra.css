@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #615dad, #ffc8da);
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  position: relative;
+  top: -30px;
+}
+
+.grid-card {
+  background: #283e50;
+  width: 75vmin;
+  height: 75vmin;
+  margin-bottom: 50px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-card button {
+  flex-basis: 10%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid black;
+  padding: 0;
+ }
+
+.grid-card button:hover {
+  filter: brightness(2);
+}
+
+.title {
+  font-family: 'Lobster';
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 40px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 75vmin;
+}
+
+.player-info {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.player-info img {
+  width: 20px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.home {
+  background-color: #1fcca4;
+  width: 32px;
+  border-radius: 3px 3px 3px 3px;
+  padding: 7px;
+}
+
+.restart {
+  background-color: #0197f6;
+  width: 32px;
+  border-radius: 3px 3px 3px 3px;
+  padding: 7px;
+  margin-left: 5px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.home:hover {
+  background-color: #1cbb96;
+}
+
+.restart:hover {
+  background-color: #0090e9;
+}
+
