@@ -1,5 +1,5 @@
 let currentPlayer = 'circle';
-const currentPlayerInfoElement = document.getElementById('currentPlayerInfo'); // Používáš existující element
+const currentPlayerInfoElement = document.getElementById('currentPlayerInfo');
 
 const handleFieldClick = (event) => {
   const clickedField = event.target;
