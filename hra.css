@@ -62,11 +62,13 @@ h1 {
   margin-bottom: 5px;
 }
 
+/*
 .player-info img {
   width: 25px;
   margin-left: 10px;
   margin-bottom: 5px;
 }
+*/
 
 .home {
   background-color: #1fcca4;
@@ -110,3 +112,21 @@ h1 {
   background-position: center;
   background-size: 5vmin;
 }
+
+#currentPlayerInfo {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+}
+
+.player-circle {
+  background-image: url('circle.svg');
+}
+
+.player-cross {
+  background-image: url('cross.svg');
+}
+
