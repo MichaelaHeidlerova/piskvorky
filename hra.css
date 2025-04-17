@@ -20,83 +20,73 @@ h1 {
   top: -30px;
 }
 
-.grid-card {
-  background: #283e50;
-  width: 75vmin;
-  height: 75vmin;
-  margin-bottom: 50px;
-}
-
-.row {
-  width: 100%;
+.playing-field {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 80vmin;
 }
 
-.grid-card button {
-  flex-basis: 10%;
-  aspect-ratio: 1 / 1;
+.playing-field button {
   border: 1px solid black;
-  padding: 0;
+  opacity: 0.5;
+  cursor: pointer;
+  width: calc(8vmin);
+  height: calc(8vmin);
  }
 
-.grid-card button:hover {
-  filter: brightness(2);
+
+.cell:hover {
+  filter: brightness(100);
 }
+
 
 .title {
   font-family: 'Lobster';
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
-  padding: 0px;
-  margin: 0px;
-  margin-top: 40px;
+  margin: 25px 0px 0px 0px;
 }
 
 .menu {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  width: 75vmin;
+  justify-content: space-between;
+  padding-bottom: 5px; 
 }
 
 .player-info {
-  font-size: 20px;
+  font-size: 25px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  margin-right: 20px;
+  margin-bottom: 5px;
 }
 
 .player-info img {
-  width: 20px;
+  width: 25px;
   margin-left: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 
 .home {
   background-color: #1fcca4;
-  width: 32px;
+  width: 35px;
   border-radius: 3px 3px 3px 3px;
   padding: 7px;
+  margin-bottom: 5px;
 }
 
 .restart {
   background-color: #0197f6;
-  width: 32px;
+  width: 35px;
   border-radius: 3px 3px 3px 3px;
   padding: 7px;
   margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 .icons {
   display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
-.icons a {
-  text-decoration: none;
 }
 
 .home:hover {
@@ -107,3 +97,16 @@ h1 {
   background-color: #0090e9;
 }
 
+.black-circle {
+  background-image: url('blackcircle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5vmin;
+}
+
+.black-cross {
+  background-image: url('blackcross.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5vmin;
+}
