@@ -6,13 +6,11 @@ const handleFieldClick = (event) => {
 
   if (currentPlayer === 'circle') {
     clickedField.classList.add('black-circle');
-    clickedField.classList.add('played');
     currentPlayer = 'cross';
     currentPlayerInfoElement.classList.remove('player-circle');
     currentPlayerInfoElement.classList.add('player-cross');
   } else {
     clickedField.classList.add('black-cross');
-    clickedField.classList.add('played');
     currentPlayer = 'circle';
     currentPlayerInfoElement.classList.remove('player-cross');
     currentPlayerInfoElement.classList.add('player-circle');
