@@ -3,13 +3,16 @@ const currentPlayerInfoElement = document.getElementById('currentPlayerInfo');
 
 const handleFieldClick = (event) => {
   const clickedField = event.target;
+
   if (currentPlayer === 'circle') {
     clickedField.classList.add('black-circle');
+    clickedField.classList.add('played');
     currentPlayer = 'cross';
     currentPlayerInfoElement.classList.remove('player-circle');
     currentPlayerInfoElement.classList.add('player-cross');
   } else {
     clickedField.classList.add('black-cross');
+    clickedField.classList.add('played');
     currentPlayer = 'circle';
     currentPlayerInfoElement.classList.remove('player-cross');
     currentPlayerInfoElement.classList.add('player-circle');
@@ -25,3 +28,12 @@ fields.forEach(field => {
 });
 
 currentPlayerInfoElement.classList.add('player-circle');
+
+const restartButton = document.getElementById('restartGameButton');
+
+restartButton.addEventListener('click', (event) => {
+  const confirmation = confirm('Opravdu chcete restartovat hru?');
+  if (!confirmation) {
+    event.preventDefault();
+  }
+});

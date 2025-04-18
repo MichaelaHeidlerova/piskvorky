@@ -62,13 +62,11 @@ h1 {
   margin-bottom: 5px;
 }
 
-/*
 .player-info img {
   width: 25px;
   margin-left: 10px;
   margin-bottom: 5px;
 }
-*/
 
 .home {
   background-color: #1fcca4;
@@ -99,7 +97,7 @@ h1 {
   background-color: #0090e9;
 }
 
-.black-circle {
+.black-circle, .black-cross {
   background-image: url('blackcircle.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -108,9 +106,6 @@ h1 {
 
 .black-cross {
   background-image: url('blackcross.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 5vmin;
 }
 
 #currentPlayerInfo {
@@ -129,4 +124,3 @@ h1 {
 .player-cross {
   background-image: url('cross.svg');
 }
-
