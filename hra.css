@@ -34,11 +34,9 @@ h1 {
   height: calc(8vmin);
  }
 
-
 .cell:hover {
   filter: brightness(100);
 }
-
 
 .title {
   font-family: 'Lobster';
