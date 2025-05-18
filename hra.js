@@ -17,7 +17,7 @@ let currentPlayer = 'circle';
 const currentPlayerInfoElement = document.getElementById('currentPlayerInfo');
 const fields = document.querySelectorAll('.cell');
 
-const suggestMove = async (board) => {
+const playerMove = async (board) => {
   const response = await fetch(
     'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
     {
@@ -33,12 +33,12 @@ const suggestMove = async (board) => {
   return data;
 };
 
-const makeAiMove = async () => {
+const aiMove = async () => {
   fields.forEach((field) => {
     field.disabled = true;
   });
 
-  const suggestedMove = await suggestMove(winnerPlayingField);
+  const playerMoved = await playerMove(winnerPlayingField);
 
   fields.forEach((field, index) => {
     if (winnerPlayingField[index] === '_') {
@@ -46,8 +46,8 @@ const makeAiMove = async () => {
     }
   });
 
-  if (suggestedMove && currentPlayer === 'cross') {
-    const { x, y } = suggestedMove.position;
+  if (playerMoved && currentPlayer === 'cross') {
+    const { x, y } = playerMoved.position;
     const index = x + y * 10;
     const aiField = document.getElementById(index.toString());
     if (aiField && winnerPlayingField[index.toString()] === '_') {
@@ -58,7 +58,7 @@ const makeAiMove = async () => {
 
 const handleFieldClick = (event) => {
   const clickedField = event.target;
-  const clickedFieldId = parseInt(clickedField.id);
+  const clickedFieldId = clickedField.id;
   let playerSymbol = '';
 
   if (currentPlayer === 'circle') {
@@ -68,7 +68,6 @@ const handleFieldClick = (event) => {
     winnerPlayingField[clickedFieldId] = playerSymbol;
 
     const winner = findWinner(winnerPlayingField);
-    console.log('Výsledek findWinner po tahu kolečka:', winner);
 
     if (winner === 'o') {
       alert('Vyhrálo KOLEČKO!');
@@ -80,23 +79,20 @@ const handleFieldClick = (event) => {
     currentPlayerInfoElement.classList.remove('player-circle');
     currentPlayerInfoElement.classList.add('player-cross');
 
-    makeAiMove();
+    aiMove();
   } else if (currentPlayer === 'cross') {
-    console.log('Probíhá tah křížku');
     playerSymbol = 'x';
     clickedField.classList.add('black-cross');
     clickedField.disabled = true;
     winnerPlayingField[clickedFieldId] = playerSymbol;
 
     currentPlayer = 'circle';
-    console.log('Hráč přepnut na:', currentPlayer);
 
     currentPlayerInfoElement.classList.remove('player-cross');
     currentPlayerInfoElement.classList.add('player-circle');
 
     setTimeout(() => {
       const winner = findWinner(winnerPlayingField);
-      console.log('Výsledek findWinner po tahu křížku:', winner);
 
       if (winner === 'x') {
         alert('Vyhrál KŘÍŽEK!');
