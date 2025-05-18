@@ -27,6 +27,7 @@ h1 {
 }
 
 .playing-field button {
+  background-color: rgba(255, 255, 255, 0.35);
   border: 1px solid black;
   opacity: 0.5;
   cursor: pointer;
@@ -35,7 +36,7 @@ h1 {
  }
 
 .cell:hover {
-  filter: brightness(100);
+  background-color: rgba(255, 255, 255, 0.5)
 }
 
 .title {
